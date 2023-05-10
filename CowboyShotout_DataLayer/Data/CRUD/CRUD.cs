@@ -6,8 +6,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using CowboyShotout_DataLayer.Interfaces.BaseObject;
-using CowboyShotout_DataLayer.Models;
-using CowboyShotout_DataLayer.Models.Dbo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using static System.Console;

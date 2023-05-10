@@ -1,10 +1,11 @@
+using CowboyShotout_DataLayer.Models.Dbo;
 using CowboyShotout_DataLayer.Models.ViewModels;
 using CowboyShotout_DataLayer.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cowboyshotout_APIs.Controllers;
 
-[Route(@"api\v1\Cowboy")]
+[Route(@"api/v1/cowboy")]
 public class CowboyController : ControllerBase
 {
     private readonly CowboyService _service;
@@ -14,10 +15,10 @@ public class CowboyController : ControllerBase
         _service = service;
     }
     // POST: api/cowboy
-    [HttpPost]
-    public async Task<IActionResult> CreateCowboy([FromBody] CowboyViewModel cowboyViewModel)
+    [HttpPost(Name = "create")]
+    public async Task<IActionResult> CreateCowboy(CowboyModel cowboyModel)
     {
-        var createdCowboy = await _service.CreateCowboy(cowboyViewModel);
+        var createdCowboy = await _service.CreateCowboyAsync();
         return CreatedAtAction(nameof(GetCowboy), new { id = createdCowboy.Id }, createdCowboy);
     }
 

@@ -22,3 +22,5 @@ C:\Users\Naesj\source\repos\CowboyShotout\CowboyShotout_DataLayer\obj\Debug\net7
 C:\Users\Naesj\source\repos\CowboyShotout\CowboyShotout_DataLayer\obj\Debug\net7.0\refint\CowboyShotout_DataLayer.dll
 C:\Users\Naesj\source\repos\CowboyShotout\CowboyShotout_DataLayer\obj\Debug\net7.0\CowboyShotout_DataLayer.pdb
 C:\Users\Naesj\source\repos\CowboyShotout\CowboyShotout_DataLayer\obj\Debug\net7.0\ref\CowboyShotout_DataLayer.dll
+C:\Users\Naesj\source\repos\CowboyShotout\CowboyShotout_DataLayer\bin\Debug\net7.0\CowboyShotout_DataLayer.runtimeconfig.json
+C:\Users\Naesj\source\repos\CowboyShotout\CowboyShotout_DataLayer\obj\Debug\net7.0\CowboyShotout_DataLayer.genruntimeconfig.cache

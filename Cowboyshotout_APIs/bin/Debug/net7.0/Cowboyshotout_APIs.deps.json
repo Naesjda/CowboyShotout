@@ -1077,6 +1077,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5",
           "Microsoft.Extensions.Configuration.UserSecrets": "7.0.0",
           "Microsoft.Extensions.Identity.Stores": "7.0.5",
+          "Newtonsoft.Json": "13.0.3",
           "WebSharper": "6.1.4.277"
         },
         "runtime": {
