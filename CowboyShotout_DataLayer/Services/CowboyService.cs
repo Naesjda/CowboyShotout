@@ -44,16 +44,16 @@ public class CowboyService : ICowboyService
         return cowboyModel;
     }
 
-    public async Task UpdateCowboy(int id, CowboyViewModel cowboyViewModel)
+    public async Task UpdateCowboy(int id, CowboyModel cowboyModel)
     {
         var cb = await _crud.GetItemByIdAsync(_dbContext.CowboyModels, id);
-        var result = _crud.UpdateObject(cowboyViewModel, cb, _dbContext);
+        var result = await _crud.UpdateObjectAsync(cowboyModel, cb, _dbContext);
         if (cb == null)
         {
             throw new Exception("Cowboy not found");
         }
 
-        cb.UpdateDataObject(cowboyViewModel, _dbContext);
+        cb.UpdateDataObject(cowboyModel, _dbContext);
 
         await _dbContext.SaveChangesAsync();
     }

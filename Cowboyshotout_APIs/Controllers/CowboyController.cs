@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Cowboyshotout_APIs.Controllers;
 
+[Route(@"api\v1\Cowboy")]
 public class CowboyController : ControllerBase
 {
     private readonly CowboyService _service;

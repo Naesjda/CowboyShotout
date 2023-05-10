@@ -28,5 +28,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseRouting();
+app.UseEndpoints(ep =>
+{
+    ep.MapControllerRoute(
+        name: "Default",
+        pattern: "{controller=CowboyController}/{action=Index}");
+});
 app.Run();

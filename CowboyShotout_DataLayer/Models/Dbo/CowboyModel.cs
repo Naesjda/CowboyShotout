@@ -7,19 +7,20 @@ using WebSharper.JavaScript.Geolocation;
 
 namespace CowboyShotout_DataLayer.Models.Dbo;
 
-public class CowboyModel : IModel<CowboyViewModel>, IEntity
+public class CowboyModel : IModel<CowboyModel>, IEntity
 {
     public int Id { get; set; }
 
-    public bool UpdateDataObject(CowboyViewModel dataObject, CowboyDbContext db)
+    public bool UpdateDataObject(CowboyModel dataObject, CowboyDbContext db)
     {
         throw new NotImplementedException();
     }
 
-    public Task UpdateDataObjectAsync(CowboyViewModel dataObject, CowboyDbContext db)
+    public Task UpdateDataObjectAsync(CowboyModel dataObject, CowboyDbContext db)
     {
         throw new NotImplementedException();
     }
+
     public byte IsValid { get; set; }
     public DateTime? ChangedAt { get; set; }
     public string CreatedBy { get; set; }
