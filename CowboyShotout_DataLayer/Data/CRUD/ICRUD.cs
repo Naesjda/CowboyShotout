@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CowboyShotout_DataLayer.Data;
+using CowboyShotout_DataLayer.Models.Dbo;
 using Microsoft.EntityFrameworkCore;
 
 namespace CowboyShotout_DataLayer.Interfaces.BaseObject
@@ -39,7 +40,7 @@ namespace CowboyShotout_DataLayer.Interfaces.BaseObject
             where T : class, IEntity;
 
         Task<List<T>> GetAllItemsAsync<T>(DbSet<T> dbset) where T : class, IEntity;
-        T GetItemById<T>(DbSet<T> dbSet, int Id) where T : class, IEntity;
+        IEnumerable<T> GetItemById<T>(DbSet<T> dbSet, int Id) where T : class, IEntity;
         Task<T> GetItemByIdAsync<T>(DbSet<T> dbSet, int Id) where T : class, IEntity;
         IEnumerable<T> GetAllItems<T>(DbSet<T> dbset) where T : class, IEntity;
         T GetItem<T>(DbSet<T> dbset, T filter) where T : class, IEntity;

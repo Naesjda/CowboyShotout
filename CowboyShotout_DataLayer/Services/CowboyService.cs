@@ -46,14 +46,14 @@ public class CowboyService : ICowboyService
 
     public async Task UpdateCowboy(int id, CowboyViewModel cowboyViewModel)
     {
-        var cowboy = await _dbContext.CowboyModels.FindAsync(id);
-
-        if (cowboy == null)
+        var cb = await _crud.GetItemByIdAsync(_dbContext.CowboyModels, id);
+        var result = _crud.UpdateObject(cowboyViewModel, cb, _dbContext);
+        if (cb == null)
         {
             throw new Exception("Cowboy not found");
         }
 
-        cowboy.UpdateDataObject(cowboyViewModel, _dbContext);
+        cb.UpdateDataObject(cowboyViewModel, _dbContext);
 
         await _dbContext.SaveChangesAsync();
     }

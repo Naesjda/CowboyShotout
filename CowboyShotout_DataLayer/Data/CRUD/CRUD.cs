@@ -7,12 +7,16 @@ using System.Threading;
 using System.Threading.Tasks;
 using CowboyShotout_DataLayer.Interfaces.BaseObject;
 using CowboyShotout_DataLayer.Models;
+using CowboyShotout_DataLayer.Models.Dbo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using static System.Console;
 
 namespace CowboyShotout_DataLayer.Data.CRUD
 {
+    /// <summary>
+    ///     TODO : Needs to implement interface for this class when it is completed.
+    /// </summary>
     public class CRUD : ICRUD
     {
         private static CancellationTokenSource _tokenSource;
@@ -301,12 +305,12 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             return items;
         }
 
-        public T GetItemById<T>(DbSet<T> dbSet, int Id) where T : class, IEntity
+        public IEnumerable<T> GetItemById<T>(DbSet<T> dbSet, int Id) where T : class, IEntity
         {
-            var Items = dbSet.FirstOrDefault(x => x.Id == Id && x.IsValid == (byte)1);
-            if (Items != null)
+            var Items = dbSet.Where(x => x.Id == Id && x.IsValid == (byte)1).ToList();
+            if (Items.Count >= 1)
                 return Items;
-            return null;
+            return new List<T>();
         }
 
         public async Task<T> GetItemByIdAsync<T>(DbSet<T> dbSet, int Id) where T : class, IEntity
