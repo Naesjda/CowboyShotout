@@ -9,13 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="..\.dockerignore">
-            <Link>.dockerignore</Link>
-        </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\Cowboyshotout_APIs\Cowboyshotout_APIs.csproj"/>
+        <ProjectReference Include="..\Cowboyshotout_APIs\Cowboyshotout_APIs.csproj" />
     </ItemGroup>
 
 </Project>

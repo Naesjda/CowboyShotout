@@ -15,7 +15,7 @@ public class CowboyApi
         _openaiApiKey = openaiApiKey;
     }
 
-    [ActionName("createcowboy")]
+    [HttpPost("createcowboy")]
     public async Task<CowboyModel> CreateCowboyAsync()
     {
         var cowboy = new CowboyModel();
