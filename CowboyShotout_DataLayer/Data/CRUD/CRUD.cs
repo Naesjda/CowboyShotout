@@ -59,7 +59,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
         {
             var dataObject = new T();
             dataObject.IsValid = 1;
-            _ = await model.UpdateDataObjectAsync(dataObject, db);
+            await model.UpdateDataObjectAsync(dataObject, db);
             return dataObject;
         }
 
@@ -75,8 +75,8 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             where T : class, IEntity, new()
         {
             exsistingObject.ChangedAt = DateTime.Now;
-            var taskSuccess = await model.UpdateDataObjectAsync(exsistingObject, db);
-            return taskSuccess;
+            await model.UpdateDataObjectAsync(exsistingObject, db);
+            return true;
         }
 
         public async Task<bool> AddOrUpdateAsync<T>(CowboyDbContext db, DbSet<T> dbSet, IModel<T> model,
@@ -192,7 +192,6 @@ namespace CowboyShotout_DataLayer.Data.CRUD
 
                 item.IsValid = 0;
                 item.ChangedAt = DateTime.Now;
-                item.ChangedByUserId = 0;
                 _ = await db.SaveChangesAsync();
                 return true;
             }
@@ -342,7 +341,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
 
             if (type == typeof(string))
             {
-                var item = dbset.Where(x => x.CreatedByUserId.ToString() == filter.ToString());
+                var item = dbset.Where(x => x.Id.ToString() == filter.ToString());
                 return item.FirstOrDefault();
             }
 

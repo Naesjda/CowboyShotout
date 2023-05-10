@@ -15,7 +15,7 @@ public class CowboyModel : IModel<CowboyViewModel>
         throw new NotImplementedException();
     }
 
-    public Task<bool> UpdateDataObjectAsync(CowboyViewModel dataObject, CowboyDbContext db)
+    public Task UpdateDataObjectAsync(CowboyViewModel dataObject, CowboyDbContext db)
     {
         throw new NotImplementedException();
     }

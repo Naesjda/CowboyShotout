@@ -16,7 +16,14 @@ public class CowboyViewModel : CowboyModel, IEntity
 
     public void UpdateDataObject(CowboyModel dataObject, CowboyDbContext db)
     {
-        this.Health = dataObject.Health;
+        dataObject.Name = this.Name;
+        dataObject.Age = this.Age;
+        dataObject.Height = this.Height;
+        dataObject.Hair = this.Hair;
+        dataObject.Health = this.Health;
+        dataObject.Speed = this.Speed;
+        dataObject.HitRate = this.HitRate;
+        dataObject.Gun = this.Gun;
     }
 
     public Task<bool> UpdateDataObjectAsync(CowboyModel dataObject, CowboyDbContext db)

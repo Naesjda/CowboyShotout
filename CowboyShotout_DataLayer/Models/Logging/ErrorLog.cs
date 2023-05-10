@@ -23,7 +23,7 @@ namespace CowboyShotout_DataLayer.Models.Logging
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdateDataObjectAsync(ErrorLog dataObject, CowboyDbContext db)
+        public Task UpdateDataObjectAsync(ErrorLog dataObject, CowboyDbContext db)
         {
             throw new NotImplementedException();
         }

@@ -7,6 +7,6 @@ namespace CowboyShotout_DataLayer.Interfaces.BaseObject
     {
         int Id { get; set; }
         bool UpdateDataObject(T dataObject, CowboyDbContext db);
-        Task<bool> UpdateDataObjectAsync(T dataObject, CowboyDbContext db);
+        Task UpdateDataObjectAsync(T dataObject, CowboyDbContext db);
     }
 }
