@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CowboyShotout_DataLayer.Data;
+using CowboyShotout_DataLayer.Data.CRUD;
+using CowboyShotout_DataLayer.Interfaces.BaseObject;
 using CowboyShotout_DataLayer.Models.Dbo;
 using CowboyShotout_DataLayer.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -10,16 +12,19 @@ namespace CowboyShotout_DataLayer.Services;
 public class CowboyService : ICowboyService
 {
     private readonly CowboyDbContext _dbContext;
+    private readonly ICRUD _crud;
 
-    public CowboyService(CowboyDbContext dbContext)
+
+    public CowboyService(CowboyDbContext dbContext, ICRUD crud)
     {
         _dbContext = dbContext;
+        _crud = crud;
     }
 
     public async Task<IEnumerable<CowboyModel>> GetAllCowboys()
     {
         // Fetch all cowboys from your database.
-        var cowboys = await _dbContext.CowboyModels.ToListAsync();
+        var cowboys = await _crud.GetAllItemsAsync(_dbContext.CowboyModels);
 
         return cowboys;
     }
@@ -27,17 +32,14 @@ public class CowboyService : ICowboyService
     public async Task<CowboyModel> GetCowboy(int id)
     {
         // Fetch the cowboy from your database using the provided ID.
-        var cowboy = await _dbContext.CowboyModels.FindAsync(id);
+        var cowboy = await _crud.GetItemByIdAsync(_dbContext.CowboyModels, id);
 
         return cowboy;
     }
 
-    public async Task<CowboyModel> CreateCowboy(CowboyViewModel cowboyViewModel)
+    public async Task<CowboyModel> CreateCowboy(CowboyModel cowboyModel)
     {
-        CowboyModel cowboyModel = ViewModelToModel(cowboyViewModel);
-
-        await _dbContext.CowboyModels.AddAsync(cowboyModel);
-        await _dbContext.SaveChangesAsync();
+        await _crud.AddNewObjectAsync<CowboyModel>(_dbContext.CowboyModels, cowboyModel, _dbContext);
 
         return cowboyModel;
     }
@@ -111,4 +113,18 @@ public class CowboyService : ICowboyService
         // if front-end is to be implemented.
         throw new NotImplementedException();
     }
+
+    public async Task<double> DistanceBetweenCowboys(int cowboyId1, int cowboyId2)
+    {
+        var cowboy1 = await _crud.GetItemByIdAsync(_dbContext.CowboyModels, cowboyId1);
+        var cowboy2 = await _crud.GetItemByIdAsync(_dbContext.CowboyModels, cowboyId1);
+        if (cowboy1 == null || cowboy2 == null)
+        {
+            throw new ArgumentNullException("Both cowboys must be non-null.");
+        }
+
+
+        return cowboy1.Position.DistanceTo(cowboy2.Position);
+    }
+
 }

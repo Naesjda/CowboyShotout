@@ -3,10 +3,11 @@ using System.Threading.Tasks;
 using CowboyShotout_DataLayer.Data;
 using CowboyShotout_DataLayer.Interfaces.BaseObject;
 using CowboyShotout_DataLayer.Models.ViewModels;
+using WebSharper.JavaScript.Geolocation;
 
 namespace CowboyShotout_DataLayer.Models.Dbo;
 
-public class CowboyModel : IModel<CowboyViewModel>
+public class CowboyModel : IModel<CowboyViewModel>, IEntity
 {
     public int Id { get; set; }
 
@@ -24,7 +25,7 @@ public class CowboyModel : IModel<CowboyViewModel>
     public string CreatedBy { get; set; }
     public int? CreatedByUserId { get; set; }
     public int? ChangedByUserId { get; set; }
-    public DateTime CreatedTime { get; set; }
+    public DateTime? CreatedTime { get; set; }
     public string Name { get; set; }
     public int Age { get; set; }
     public double Height { get; set; }
@@ -33,6 +34,7 @@ public class CowboyModel : IModel<CowboyViewModel>
     public double Speed { get; set; }
     public double HitRate { get; set; }
     public GunModel Gun { get; set; }
+    public Position Position { get; set; }
 
     /// <summary>
     /// Examplary usage:
@@ -42,25 +44,29 @@ public class CowboyModel : IModel<CowboyViewModel>
     /// Console.WriteLine("Distance between p1 and p2: {0}", distance);
     /// Distance between p1 and p2: 5.196152422706632
     /// </summary>
-    public struct Position
+
+    
+    
+}
+
+public class Position
+{
+    public double X { get; set; }
+    public double Y { get; set; }
+    public double Z { get; set; }
+
+    public Position(double x, double y, double z)
     {
-        public double X { get; }
-        public double Y { get; }
-        public double Z { get; }
+        X = x;
+        Y = y;
+        Z = z;
+    }
 
-        public Position(double x, double y, double z)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-        }
-
-        public double DistanceTo(Position other)
-        {
-            double dx = X - other.X;
-            double dy = Y - other.Y;
-            double dz = Z - other.Z;
-            return Math.Sqrt(dx * dx + dy * dy + dz * dz);
-        }
+    public double DistanceTo(Position other)
+    {
+        double dx = X - other.X;
+        double dy = Y - other.Y;
+        double dz = Z - other.Z;
+        return Math.Sqrt(dx * dx + dy * dy + dz * dz);
     }
 }

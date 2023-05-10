@@ -13,10 +13,6 @@ using static System.Console;
 
 namespace CowboyShotout_DataLayer.Data.CRUD
 {
-    /// <summary>
-    ///     TODO : Needs to implement interface for this class when it is completed.
-    ///     Consider splitting up :Create / Update together, and Read and delete seperate?!?!
-    /// </summary>
     public class CRUD : ICRUD
     {
         private static CancellationTokenSource _tokenSource;
@@ -172,14 +168,6 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             }
 
             return true;
-            // var a = db.ChangeTracker.Context.Database.CurrentTransaction;
-            // var lagret = db.SaveChanges();
-            // if (lagret > 0) return true;
-            // //Exsisting object 
-            // else
-            // {
-            //     return false;
-            // }
         }
 
         public async Task<bool> Delete<T>(CowboyDbContext db, DbSet<T> dbSet, int id)
@@ -313,12 +301,12 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             return items;
         }
 
-        public IEnumerable<T> GetItemById<T>(DbSet<T> dbSet, int Id) where T : class, IEntity
+        public T GetItemById<T>(DbSet<T> dbSet, int Id) where T : class, IEntity
         {
-            var Items = dbSet.Where(x => x.Id == Id && x.IsValid == (byte)1).ToList();
-            if (Items.Count >= 1)
+            var Items = dbSet.FirstOrDefault(x => x.Id == Id && x.IsValid == (byte)1);
+            if (Items != null)
                 return Items;
-            return new List<T>();
+            return null;
         }
 
         public async Task<T> GetItemByIdAsync<T>(DbSet<T> dbSet, int Id) where T : class, IEntity

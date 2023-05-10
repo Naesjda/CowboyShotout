@@ -7,5 +7,5 @@ namespace CowboyShotout_DataLayer.Services;
 public interface ICowboyService
 {
     Task<CowboyModel> GetCowboy(int id);
-    Task<CowboyModel> CreateCowboy(CowboyViewModel cowboyViewModel);
+    Task<CowboyModel> CreateCowboy(CowboyModel cowboyModel);
 }
