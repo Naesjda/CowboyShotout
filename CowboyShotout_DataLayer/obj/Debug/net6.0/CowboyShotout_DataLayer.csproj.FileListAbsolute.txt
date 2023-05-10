@@ -1,0 +1,5 @@
+C:\Users\Naesj\OneDrive\Source\Template\TemplateWith_DI_REACT_LAYERING_GENERICCRUD\CowboyShotout_DataLayer\obj\Debug\net6.0\CowboyShotout_DataLayer.csproj.AssemblyReference.cache
+C:\Users\Naesj\OneDrive\Source\Template\TemplateWith_DI_REACT_LAYERING_GENERICCRUD\CowboyShotout_DataLayer\obj\Debug\net6.0\CowboyShotout_DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Naesj\OneDrive\Source\Template\TemplateWith_DI_REACT_LAYERING_GENERICCRUD\CowboyShotout_DataLayer\obj\Debug\net6.0\CowboyShotout_DataLayer.AssemblyInfoInputs.cache
+C:\Users\Naesj\OneDrive\Source\Template\TemplateWith_DI_REACT_LAYERING_GENERICCRUD\CowboyShotout_DataLayer\obj\Debug\net6.0\CowboyShotout_DataLayer.AssemblyInfo.cs
+C:\Users\Naesj\OneDrive\Source\Template\TemplateWith_DI_REACT_LAYERING_GENERICCRUD\CowboyShotout_DataLayer\obj\Debug\net6.0\CowboyShotout_DataLayer.csproj.CoreCompileInputs.cache

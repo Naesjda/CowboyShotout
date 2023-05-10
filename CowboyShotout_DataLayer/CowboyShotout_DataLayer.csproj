@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <UserSecretsId>bc50c013-9ee2-481e-926c-b7c797bb862f</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Interfaces\"/>
+        <Folder Include="Models\CRUD\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5"/>
+        <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.5"/>
+        <PackageReference Include="WebSharper" Version="6.1.4.277"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="web.config"/>
+        <None Remove="swagger\v1\swagger.json"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Data\IPushITContext.cs"/>
+    </ItemGroup>
+
+
+</Project>

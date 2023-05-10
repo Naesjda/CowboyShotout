@@ -1,0 +1,11 @@
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\bin\Release\netcoreapp3.1\PushIT_FromRepo.deps.json
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\bin\Release\netcoreapp3.1\PushIT_FromRepo.dll
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\bin\Release\netcoreapp3.1\PushIT_FromRepo.pdb
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\obj\Release\netcoreapp3.1\PushIT_FromRepo.csprojAssemblyReference.cache
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\obj\Release\netcoreapp3.1\PushIT_FromRepo.AssemblyInfoInputs.cache
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\obj\Release\netcoreapp3.1\PushIT_FromRepo.AssemblyInfo.cs
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\obj\Release\netcoreapp3.1\PushIT_FromRepo.csproj.CopyComplete
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\obj\Release\netcoreapp3.1\PushIT_FromRepo.dll
+C:\Users\JonathanNash\OneDrive\Source\Github\PushIT\PushIT_FromRepo\obj\Release\netcoreapp3.1\PushIT_FromRepo.pdb

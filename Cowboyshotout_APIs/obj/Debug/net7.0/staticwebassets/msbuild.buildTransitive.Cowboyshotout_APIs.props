@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Cowboyshotout_APIs.props" />
+</Project>
