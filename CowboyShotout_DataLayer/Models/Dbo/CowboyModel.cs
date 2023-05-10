@@ -1,25 +1,30 @@
 ﻿using System;
+using System.Threading.Tasks;
+using CowboyShotout_DataLayer.Data;
 using CowboyShotout_DataLayer.Interfaces.BaseObject;
+using CowboyShotout_DataLayer.Models.ViewModels;
 
 namespace CowboyShotout_DataLayer.Models.Dbo;
 
-public class CowboyModel : IEntity
+public class CowboyModel : IModel<CowboyViewModel>
 {
     public int Id { get; set; }
-    public byte IsValid { get; set; }
 
-    DateTime? IEntity.CreatedTime
+    public bool UpdateDataObject(CowboyViewModel dataObject, CowboyDbContext db)
     {
-        get => CreatedTime;
-        set => CreatedTime = DateTime.Now;
+        throw new NotImplementedException();
     }
 
+    public Task<bool> UpdateDataObjectAsync(CowboyViewModel dataObject, CowboyDbContext db)
+    {
+        throw new NotImplementedException();
+    }
+    public byte IsValid { get; set; }
     public DateTime? ChangedAt { get; set; }
     public string CreatedBy { get; set; }
     public int? CreatedByUserId { get; set; }
     public int? ChangedByUserId { get; set; }
     public DateTime CreatedTime { get; set; }
-
     public string Name { get; set; }
     public int Age { get; set; }
     public double Height { get; set; }
