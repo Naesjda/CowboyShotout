@@ -1,0 +1,5 @@
+C:\Users\Naesj\source\repos\CowboyShotout\TempForTesting\obj\Debug\net7.0\TempForTesting.csproj.AssemblyReference.cache
+C:\Users\Naesj\source\repos\CowboyShotout\TempForTesting\obj\Debug\net7.0\TempForTesting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Naesj\source\repos\CowboyShotout\TempForTesting\obj\Debug\net7.0\TempForTesting.AssemblyInfoInputs.cache
+C:\Users\Naesj\source\repos\CowboyShotout\TempForTesting\obj\Debug\net7.0\TempForTesting.AssemblyInfo.cs
+C:\Users\Naesj\source\repos\CowboyShotout\TempForTesting\obj\Debug\net7.0\TempForTesting.csproj.CoreCompileInputs.cache

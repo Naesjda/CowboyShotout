@@ -1,3 +1,4 @@
+using CowboyShotout_DataLayer.Data;
 using CowboyShotout_DataLayer.Models.Dbo;
 using CowboyShotout_DataLayer.Models.ViewModels;
 using CowboyShotout_DataLayer.Services;
@@ -11,9 +12,9 @@ public class CowboyController : ControllerBase
 {
     private readonly CowboyService _service;
 
-    public CowboyController(CowboyService service)
+    public CowboyController()
     {
-        _service = service;
+        _service = new CowboyService(new AppDbContext());
     }
     // POST: api/cowboy
     [HttpPost(Name = "create")]

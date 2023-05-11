@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 using CowboyShotout_DataLayer.Interfaces.BaseObject;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Identity.Client;
 using static System.Console;
+using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace CowboyShotout_DataLayer.Data.CRUD
 {
@@ -19,7 +22,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
     {
         private static CancellationTokenSource _tokenSource;
         private static CancellationToken _token;
-        private readonly ILogger _logger = new Logger<CRUD>(new LoggerFactory());
+        private readonly ILogger _logger = new Logger<ICRUD>(new NullLoggerFactory());
 
         public T AddNewObject<T>(DbSet<T> dbSet, IModel<T> model, AppDbContext db) where T : class, IEntity, new()
         {
