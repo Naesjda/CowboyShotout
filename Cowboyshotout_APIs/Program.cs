@@ -1,36 +1,17 @@
-using CowboyShotout_DataLayer.Data;
-using CowboyShotout_DataLayer.Data.CRUD;
-using CowboyShotout_DataLayer.Interfaces;
-using CowboyShotout_DataLayer.Services;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
-var builder = WebApplication.CreateBuilder(args);
-
-
-builder.Services.AddControllers();
-
-builder.Services.AddDbContext<AppDbContext>();
-
-
-builder.Services.AddAuthorization();
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<ICowboyService, CowboyService>();
-
-var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
+namespace Cowboyshotout_APIs
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
