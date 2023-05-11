@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Threading.Tasks;
 using CowboyShotout_DataLayer.Data;
 using CowboyShotout_DataLayer.Interfaces.BaseObject;
@@ -11,14 +12,14 @@ public class CowboyModel : IModel<CowboyModel>, IEntity
 {
     public int Id { get; set; }
 
-    public bool UpdateDataObject(CowboyModel dataObject, CowboyDbContext db)
+    public bool UpdateDataObject(CowboyModel dataObject, AppDbContext db)
     {
-        throw new NotImplementedException();
+        return false;
     }
 
-    public Task UpdateDataObjectAsync(CowboyModel dataObject, CowboyDbContext db)
+    public Task UpdateDataObjectAsync(CowboyModel dataObject, AppDbContext db)
     {
-        throw new NotImplementedException();
+        return null;
     }
 
     public byte IsValid { get; set; }
@@ -35,7 +36,7 @@ public class CowboyModel : IModel<CowboyModel>, IEntity
     public double Speed { get; set; }
     public double HitRate { get; set; }
     public GunModel Gun { get; set; }
-    public Position Position { get; set; }
+    [NotMapped] public virtual Position Position { get; set; }
 
     /// <summary>
     /// Examplary usage:
@@ -52,6 +53,7 @@ public class CowboyModel : IModel<CowboyModel>, IEntity
 
 public class Position
 {
+    
     public double X { get; set; }
     public double Y { get; set; }
     public double Z { get; set; }

@@ -14,7 +14,7 @@ public class CowboyViewModel : CowboyModel, IEntity
     public int Id { get; set; }
     public DateTime? CreatedTime { get; set; }
 
-    public void UpdateDataObject(CowboyModel dataObject, CowboyDbContext db)
+    public void UpdateDataObject(CowboyModel dataObject, AppDbContext db)
     {
         dataObject.Name = this.Name;
         dataObject.Age = this.Age;
@@ -26,7 +26,7 @@ public class CowboyViewModel : CowboyModel, IEntity
         dataObject.Gun = this.Gun;
     }
 
-    public Task<bool> UpdateDataObjectAsync(CowboyModel dataObject, CowboyDbContext db)
+    public Task<bool> UpdateDataObjectAsync(CowboyModel dataObject, AppDbContext db)
     {
         throw new System.NotSupportedException();
     }

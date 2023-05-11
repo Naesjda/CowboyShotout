@@ -11,13 +11,13 @@ public class GunModel : IEntity
     public int MaxBullets { get; set; }
     public int BulletsLeft { get; set; }
 
-    public bool UpdateDataObject(GunModel dataObject, CowboyDbContext db)
+    public bool UpdateDataObject(GunModel dataObject, AppDbContext db)
     {
         // Here you should implement the logic to update the 'dataObject' using the properties of this model.
         throw new NotImplementedException();
     }
 
-    public async Task<bool> UpdateDataObjectAsync(GunModel dataObject, CowboyDbContext db)
+    public async Task<bool> UpdateDataObjectAsync(GunModel dataObject, AppDbContext db)
     {
         // Here you should implement the logic to update the 'dataObject' using the properties of this model.
         throw new NotImplementedException();

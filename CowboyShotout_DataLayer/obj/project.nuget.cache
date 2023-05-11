@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1Fqae14sBlqwP5FS9IcXSeuiZVKMCTYWGdyrpeNsQ5yRsLBNeVddjvPypTtv7yAWE8qDbVV6TOmb7ZkzcAMcOw==",
+  "dgSpecHash": "yZsVYnSeyVfShW19qv3rW/WBZ6C1ieBSxrnsNmuPvYgeXInIeuIfCYaNVQZJaVz18ToqvuLEV7lhvPwHigqymw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Naesj\\source\\repos\\CowboyShotout\\CowboyShotout_DataLayer\\CowboyShotout_DataLayer.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\Naesj\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.5\\microsoft.entityframeworkcore.design.7.0.5.nupkg.sha512",
     "C:\\Users\\Naesj\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
     "C:\\Users\\Naesj\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.5\\microsoft.entityframeworkcore.sqlserver.7.0.5.nupkg.sha512",
+    "C:\\Users\\Naesj\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.5\\microsoft.entityframeworkcore.tools.7.0.5.nupkg.sha512",
     "C:\\Users\\Naesj\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Naesj\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\Naesj\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

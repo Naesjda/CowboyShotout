@@ -19,14 +19,9 @@ namespace CowboyShotout_DataLayer.Data.CRUD
     {
         private static CancellationTokenSource _tokenSource;
         private static CancellationToken _token;
-        private readonly ILogger _logger;
+        private readonly ILogger _logger = new Logger<CRUD>(new LoggerFactory());
 
-        public CRUD(ILogger logger)
-        {
-            _logger = logger;
-        }
-
-        public T AddNewObject<T>(DbSet<T> dbSet, IModel<T> model, CowboyDbContext db) where T : class, IEntity, new()
+        public T AddNewObject<T>(DbSet<T> dbSet, IModel<T> model, AppDbContext db) where T : class, IEntity, new()
         {
             var newObject = CreateDataObject(model, db);
             newObject.CreatedTime = DateTime.Now;
@@ -35,7 +30,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             return newObject;
         }
 
-        public T CreateDataObject<T>(IModel<T> model, CowboyDbContext db) where T : class, IEntity, new()
+        public T CreateDataObject<T>(IModel<T> model, AppDbContext db) where T : class, IEntity, new()
         {
             var dataObject = new T();
             dataObject.IsValid = 1;
@@ -43,7 +38,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             return dataObject;
         }
 
-        public async Task<T> AddNewObjectAsync<T>(DbSet<T> dbSet, IModel<T> model, CowboyDbContext db)
+        public async Task<T> AddNewObjectAsync<T>(DbSet<T> dbSet, IModel<T> model, AppDbContext db)
             where T : class, IEntity, new()
         {
             var newObject = await CreateDataObjectAsync(model, db);
@@ -52,7 +47,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             return newObject;
         }
 
-        public async Task<T> CreateDataObjectAsync<T>(IModel<T> model, CowboyDbContext db)
+        public async Task<T> CreateDataObjectAsync<T>(IModel<T> model, AppDbContext db)
             where T : class, IEntity, new()
         {
             var dataObject = new T();
@@ -61,7 +56,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             return dataObject;
         }
 
-        public bool UpdateObject<T>(IModel<T> model, T exsistingObject, CowboyDbContext db)
+        public bool UpdateObject<T>(IModel<T> model, T exsistingObject, AppDbContext db)
             where T : class, IEntity, new()
         {
             exsistingObject.ChangedAt = DateTime.Now;
@@ -69,7 +64,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             return taskSuccess;
         }
 
-        public async Task<bool> UpdateObjectAsync<T>(IModel<T> model, T exsistingObject, CowboyDbContext db)
+        public async Task<bool> UpdateObjectAsync<T>(IModel<T> model, T exsistingObject, AppDbContext db)
             where T : class, IEntity, new()
         {
             exsistingObject.ChangedAt = DateTime.Now;
@@ -77,7 +72,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             return true;
         }
 
-        public async Task<bool> AddOrUpdateAsync<T>(CowboyDbContext db, DbSet<T> dbSet, IModel<T> model,
+        public async Task<bool> AddOrUpdateAsync<T>(AppDbContext db, DbSet<T> dbSet, IModel<T> model,
             string objectName) where T : class, IEntity, new()
         {
             //New object 
@@ -129,7 +124,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             // }
         }
 
-        public bool AddOrUpdate<T>(CowboyDbContext db, DbSet<T> dbSet, IModel<T> model,
+        public bool AddOrUpdate<T>(AppDbContext db, DbSet<T> dbSet, IModel<T> model,
             string objectName) where T : class, IEntity, new()
         {
             //New object 
@@ -172,7 +167,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             return true;
         }
 
-        public async Task<bool> Delete<T>(CowboyDbContext db, DbSet<T> dbSet, int id)
+        public async Task<bool> Delete<T>(AppDbContext db, DbSet<T> dbSet, int id)
             where T : class, IEntity, new()
         {
             try
@@ -193,7 +188,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             }
         }
 
-        public bool AddOrUpdateMany<TEntity, TModel>(CowboyDbContext db, DbSet<TEntity> dbSet, List<TModel> models,
+        public bool AddOrUpdateMany<TEntity, TModel>(AppDbContext db, DbSet<TEntity> dbSet, List<TModel> models,
             string objectName) where TEntity : class, IEntity, new() where TModel : IModel<TEntity>
         {
             var modelSet = new ConcurrentBag<TModel>(models);
@@ -263,7 +258,7 @@ namespace CowboyShotout_DataLayer.Data.CRUD
             }
         }
 
-        public bool DeleteMany<T>(CowboyDbContext db, DbSet<T> dbSet, List<int> ids, string objectName)
+        public bool DeleteMany<T>(AppDbContext db, DbSet<T> dbSet, List<int> ids, string objectName)
             where T : class, IEntity
         {
             try

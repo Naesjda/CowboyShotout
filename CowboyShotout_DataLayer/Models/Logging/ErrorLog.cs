@@ -18,12 +18,12 @@ namespace CowboyShotout_DataLayer.Models.Logging
         public int? ChangedByUserId { get; set; }
         public int Id { get; set; }
 
-        public bool UpdateDataObject(ErrorLog dataObject, CowboyDbContext db)
+        public bool UpdateDataObject(ErrorLog dataObject, AppDbContext db)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateDataObjectAsync(ErrorLog dataObject, CowboyDbContext db)
+        public Task UpdateDataObjectAsync(ErrorLog dataObject, AppDbContext db)
         {
             throw new NotImplementedException();
         }

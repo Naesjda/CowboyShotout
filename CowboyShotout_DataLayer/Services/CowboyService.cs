@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using CowboyShotout_DataLayer.Data;
 using CowboyShotout_DataLayer.Data.CRUD;
+using CowboyShotout_DataLayer.Interfaces;
 using CowboyShotout_DataLayer.Interfaces.BaseObject;
 using CowboyShotout_DataLayer.Models.Dbo;
 using CowboyShotout_DataLayer.Models.ViewModels;
@@ -13,13 +14,12 @@ using Newtonsoft.Json;
 namespace CowboyShotout_DataLayer.Services;
 public class CowboyService : ICowboyService
 {
-    private readonly CowboyDbContext _dbContext;
-    private readonly ICRUD _crud;
-    private readonly HttpClient _httpClient = new HttpClient();
-    public CowboyService(CowboyDbContext dbContext, ICRUD crud)
+    private readonly AppDbContext _dbContext;
+    private readonly ICRUD _crud = new CRUD();
+
+    public CowboyService(AppDbContext dbContext)
     {
         _dbContext = dbContext;
-        _crud = crud;
     }
 
     public async Task<IEnumerable<CowboyModel>> GetAllCowboys()

@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CowboyShotout_DataLayer.Models.Dbo;
-using CowboyShotout_DataLayer.Models.ViewModels;
 
-namespace CowboyShotout_DataLayer.Services;
+namespace CowboyShotout_DataLayer.Interfaces;
 
 public interface ICowboyService
 {

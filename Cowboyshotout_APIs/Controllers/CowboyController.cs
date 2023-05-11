@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Cowboyshotout_APIs.Controllers;
 
+[ApiController]
 [Route(@"api/v1/cowboy")]
 public class CowboyController : ControllerBase
 {
